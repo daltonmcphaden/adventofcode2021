@@ -11,7 +11,9 @@ for line in boards:
         b += 1
     else:
         newboards[b].append(line)
-print(numbers)
+
+numbers = numbers.strip()
+numbers = list(map(int, numbers.split(',')))
 
 boards = newboards
 for board in newboards:
@@ -22,3 +24,21 @@ for board in newboards:
             board[line][i] = [board[line][i], 'n']
 
 
+for number in numbers:
+    for board in boards:
+        for line in board:
+            for num in line:
+                if num[0] == number:
+                    num[1] = 'y'
+
+    checkBingo(boards)
+
+def checkBingo(boards):
+    horizontalBingo = False
+    verticalBingo = False
+    for board in boards:
+        for line in board:
+            
+            for num in line:
+                if num[1] == 'n': 
+                    
