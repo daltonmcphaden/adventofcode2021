@@ -1,5 +1,3 @@
-import pydash as _
-
 with open("day10/input.txt") as file:
     lines = file.read().splitlines()
 
